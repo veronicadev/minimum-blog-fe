@@ -4,13 +4,7 @@ import { HomepageComponent } from './blog/pages/homepage/homepage.component';
 
 const routes: Routes = [
   {
-    path:'homepage',
-    component: HomepageComponent
-  },
-  {
-    path:'',
-    redirectTo: '/homepage',
-    pathMatch: 'full'
+    path: 'homepage', loadChildren: './blog/blog.module#BlogModule'
   }
 ];
 
