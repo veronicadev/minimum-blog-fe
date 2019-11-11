@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { PostComponent } from './post/post.component';
+import { HomepageComponent } from './homepage.component';
+import { HeaderComponent } from '../../header/header.component';
+import { FooterComponent } from '../../footer/footer.component';
+import { PostComponent } from '../../post/post.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BlogRoutingModule } from './blog-routing.module';
-
+import { HomeRoutingModule } from './home-routing.module';
 @NgModule({
   declarations: [
     HomepageComponent,
@@ -17,7 +16,7 @@ import { BlogRoutingModule } from './blog-routing.module';
   imports: [
     CommonModule,
     HttpClientModule,
-    BlogRoutingModule
+    HomeRoutingModule
   ],
   exports:[
     HomepageComponent,
@@ -26,4 +25,4 @@ import { BlogRoutingModule } from './blog-routing.module';
     PostComponent
   ]
 })
-export class BlogModule { }
+export class HomeModule { }
