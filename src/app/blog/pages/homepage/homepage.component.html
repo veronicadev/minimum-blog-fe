@@ -14,18 +14,7 @@
 <section class="section-white section--last-posts">
   <div class="container container-last-posts">
     <div class="left-side">
-      <article *ngFor="let post of posts" class="post-medium">
-        <div class="post-medium__img post-medium__img--1"></div>
-        <div class="post-medium__info">
-          <h2 class="post-medium_title">{{post.title}}</h2>
-        </div>
-      </article>
-      <!--article class="post-small post-add-margin--160">
-        <div class="post-small__img post-small__img--1"></div>
-        <div class="post-small__info">
-          <h2 class="post-small_title">John Doe captures primordial landscapes</h2>
-        </div>
-      </article-->
+      <mb-post *ngFor="let post of posts; let index" [post]="post" [index]="index"></mb-post>
     </div>
   </div>
 </section>
