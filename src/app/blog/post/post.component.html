@@ -1,14 +1,13 @@
-<article *ngIf="index%2==0; else postTemplate2" class="post-medium">
-  <div class="post-medium__img " [ngStyle]="{'background-image': 'url(' + post.imageUrl + ')'}"></div>
-  <div class="post-medium__info">
-    <h2 class="post-medium_title">{{post.title}}</h2>
-  </div>
-</article>
-<ng-template #postTemplate2>
-  <article class="post-small post-add-margin--160">
-    <div class="post-small__img " [ngStyle]="{'background-image': 'url(' + post.imageUrl + ')'}"></div>
+<div class="post-small__content">
+    <div class="post-small__img  " [ngStyle]="{'background-image': 'url(' + post.imageUrl + ')'}"></div>
     <div class="post-small__info">
-      <h2 class="post-small_title">{{post.title}}</h2>
+      <span class="post-small__cat">Category</span>
+        <h2 class="post-small_title">{{post.title | trim:35}}</h2>
+        <p class="post-small__excerpt">{{post.content | trim:40}}</p>
+        <div class="post-small__author">
+          <span class="post-small__avatar"></span>
+          <span class="post-small__author-name">James White</span>
+        </div>
     </div>
-  </article>
-</ng-template>
+</div>
+

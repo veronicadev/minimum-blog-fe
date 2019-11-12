@@ -6,6 +6,8 @@ import { FooterComponent } from '../../footer/footer.component';
 import { PostComponent } from '../../post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeRoutingModule } from './home-routing.module';
+import { NbCardModule } from '@nebular/theme';
+import { SharedModule } from 'src/app/shared/shared.module';
 @NgModule({
   declarations: [
     HomepageComponent,
@@ -16,7 +18,9 @@ import { HomeRoutingModule } from './home-routing.module';
   imports: [
     CommonModule,
     HttpClientModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    NbCardModule,
+    SharedModule
   ],
   exports:[
     HomepageComponent,

@@ -1,4 +1,7 @@
-<mb-header></mb-header>
+<div class=" container-last-posts">
+  <mb-post *ngFor="let post of posts; let index" [post]="post" [index]="index"></mb-post>
+</div>
+
 <section class="section--full section--grey section--post-big">
   <div class="container container-post-big">
     <article class="post-big">
@@ -11,13 +14,6 @@
     </article>
   </div>
 </section>
-<section class="section-white section--last-posts">
-  <div class="container container-last-posts">
-    <div class="left-side">
-      <mb-post *ngFor="let post of posts; let index" [post]="post" [index]="index"></mb-post>
-    </div>
-  </div>
-</section>
 <section class="section-white section--all-cat">
   <div class="container container-all-cat">
     <a title="Photography" href="#" class="category-link">Photography <sup class="category__total">350</sup></a>
@@ -26,5 +22,3 @@
     <a title="Biographies" href="#" class="category-link">Photography <sup class="category__total">37</sup></a>
   </div>
 </section>
-
-<mb-footer></mb-footer>

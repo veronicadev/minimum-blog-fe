@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <div class="container container__header">
+      <div class="header__logo">MINIMUM</div>
+      <div class="header__btn">
+        <span class="header__btn-line"></span>
+        <span class="header__btn-line"></span>
+      </div>
+    </div>
+  </nb-layout-header>
+
+  <nb-layout-column>
+
+    <router-outlet></router-outlet>
+
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
