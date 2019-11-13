@@ -2,17 +2,15 @@
   <div class="container-post-big">
     <article class="post-big">
       <div class="post-big__img"></div>
+      <div class="post-overlay"></div>
       <div class="post-big__info">
         <span class="post-big__cat">PHOTOGRAPHY</span>
         <h2 class="post-big_title">Landscapes from a bird's-eye view by Brooke Holm</h2>
-        <!--<a href="#" class="read-more">Read more</a>-->
       </div>
     </article>
   </div>
 </section>
-<hr>
 <div class=" container-last-posts">
-  <h2 class="title">Blog</h2>
   <mb-post *ngFor="let post of posts; let index" [post]="post" [index]="index"></mb-post>
 </div>
 
