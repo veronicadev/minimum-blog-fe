@@ -4,11 +4,11 @@ import { Post } from '../../models/post';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'mb-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.less']
+  selector: 'mb-posts',
+  templateUrl: './posts.component.html',
+  styleUrls: ['./posts.component.less']
 })
-export class HomepageComponent implements OnInit {
+export class PostsComponent implements OnInit {
   posts: Array<Post>;
   constructor(public postService: PostService) { }
 

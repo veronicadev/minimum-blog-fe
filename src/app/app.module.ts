@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostService } from './services/post.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeModule } from './blog/homepage/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule } from '@nebular/theme';
 import { SharedModule } from './shared/shared.module';
@@ -18,12 +17,10 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HomeModule,
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     SharedModule
-
   ],
   providers: [
     PostService

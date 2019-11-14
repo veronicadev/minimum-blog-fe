@@ -1,7 +1,7 @@
 export interface Post{
-  title: String;
-  content: String;
-  imageUrl: String;
-  createdAt?: String;
-  updatedAt?: String;
+  title: string;
+  content: string;
+  imageUrl: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
