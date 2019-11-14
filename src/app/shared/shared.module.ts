@@ -5,6 +5,7 @@ import { PostPreviewComponent } from './components/post-preview/post-preview.com
 import { PostPreviewMetaComponent } from './components/post-preview-meta/post-preview-meta.component';
 import { PostAuthorComponent } from './components/post-author/post-author.component';
 import { PostLikeComponent } from './components/post-like/post-like.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PostLikeComponent } from './components/post-like/post-like.component';
     PostLikeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     TrimPipe,

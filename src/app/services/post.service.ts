@@ -15,4 +15,8 @@ export class PostService {
     return this.httpClient.get<Array<Post>>(`${environment.apiUrl}/posts`, {params});
   }
 
+  getPost(id:string):Observable<Post>{
+    return this.httpClient.get<Post>(`${environment.apiUrl}/posts/${id}`);
+  }
+
 }

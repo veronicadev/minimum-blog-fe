@@ -1,4 +1,4 @@
-<div class="post-small__content">
+<a [routerLink]="['/posts', post._id]" class="post-small__content">
   <div class="post-small__img  " [ngStyle]="{'background-image': 'url(' + post.imageUrl + ')'}"></div>
   <div class="post-small__info">
     <span class="post-small__cat">Category</span>
@@ -6,4 +6,4 @@
     <p class="post-small__excerpt">{{post.content | trim:40}}</p>
     <mb-post-preview-meta></mb-post-preview-meta>
   </div>
-</div>
+</a>

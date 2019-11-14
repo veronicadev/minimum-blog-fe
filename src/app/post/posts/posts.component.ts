@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class PostsComponent implements OnInit {
   posts: Array<Post>;
-  constructor(public postService: PostService) { }
+  constructor(private postService: PostService) { }
 
   ngOnInit() {
     this.postService.getPosts()

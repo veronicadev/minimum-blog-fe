@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
+import { Post } from '../models/post';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'mb-post',
@@ -9,12 +11,27 @@ import { switchMap } from 'rxjs/operators';
 })
 export class PostComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  post: Post = {
+    title: '',
+    content:'',
+    imageUrl:''
+  };
+  postId: string;
+  constructor(private route: ActivatedRoute, private router: Router, private postService: PostService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(params.id); // --> Name must match wanted parameter
+      this.postId = params.id;
+      this.getPost();
     });
+  }
+
+  getPost() {
+    this.postService.getPost(this.postId)
+      .subscribe((post: Post) => {
+        console.log(post);
+        this.post = post;
+      });
   }
 
 }
