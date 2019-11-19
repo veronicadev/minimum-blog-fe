@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +30,7 @@ import { ErrorResponseInterceptor } from './services/error-response.interceptor'
   providers: [
     PostService,
     ErrorDialogService,
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorResponseInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorResponseInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
