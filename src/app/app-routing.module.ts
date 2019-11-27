@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,10 @@ const routes: Routes = [
   {
     path: 'posts',
     loadChildren: './post/post.module#PostModule'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
