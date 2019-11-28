@@ -13,6 +13,7 @@ import { ErrorResponseInterceptor } from './services/error-response.interceptor'
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     PostService,
     ErrorDialogService,
     AuthService,
+    AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: ErrorResponseInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
