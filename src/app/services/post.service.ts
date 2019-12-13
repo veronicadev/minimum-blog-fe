@@ -19,4 +19,10 @@ export class PostService {
     return this.httpClient.get<Post>(`${environment.apiUrl}/posts/${id}`);
   }
 
+  getFeed(page?: string):Observable<Array<Post>>{
+    let params = new HttpParams();
+    params.set('page', page);
+    return this.httpClient.get<Array<Post>>(`${environment.apiUrl}/posts/feed`, {params});
+  }
+
 }
