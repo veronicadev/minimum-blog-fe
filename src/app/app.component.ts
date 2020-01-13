@@ -10,7 +10,7 @@ import { ErrorDialogService } from './services/error-dialog.service';
 export class AppComponent implements AfterViewInit, OnInit {
 
   @ViewChild('errorDialog') errorDialog: TemplateRef<any>;
-  dialogRef:NbDialogRef<any>;
+  dialogRef: NbDialogRef<any>;
 
   constructor(private dialogService: NbDialogService,
     private errorDialogService: ErrorDialogService) { }
@@ -20,17 +20,17 @@ export class AppComponent implements AfterViewInit, OnInit {
     this.errorDialogService.changeStatus.subscribe((result) => {
       const error = result.error;
       let message = error.error.message;
-      if(!message) {
+      if (!message) {
         message = error.message;
       }
-      this.dialogService.open(this.errorDialog, {
+      /*this.dialogService.open(this.errorDialog, {
         context: {
           content: message,
           statusText: error.statusText,
           status: error.status
         },
         closeOnBackdropClick: true
-      });
+      });*/
     });
   }
 
