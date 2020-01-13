@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'mb-post-author',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-author.component.less']
 })
 export class PostAuthorComponent implements OnInit {
-
+  @Input() author;
   constructor() { }
 
   ngOnInit() {
