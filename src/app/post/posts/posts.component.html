@@ -1,25 +1,23 @@
-<!--section-- class="section--full section--grey section--post-big">
-  <div class="container-post-big">
-    <article class="post-big">
-      <div class="post-big__img"></div>
-      <div class="post-overlay"></div>
-      <div class="post-big__info">
-        <span class="post-big__cat">PHOTOGRAPHY</span>
-        <h2 class="post-big_title">Landscapes from a bird's-eye view by Brooke Holm</h2>
-      </div>
-    </article>
-  </div>
-</!--section-->
+<header class="header-section" id="header">
+    <div class="w-container">
+        <a class="main-title" href="/">
+        Minumum Blog
+      </a>
+        <p class="main-subheading">I'm a simple blog created using Angualar & Node.js.</p>
+        <div class="social-link-group">
+        </div>
+    </div>
+</header>
 <div class=" container-last-posts">
-  <mb-post-preview *ngFor="let post of posts; let index" [post]="post" [index]="index"></mb-post-preview>
+    <mb-post-preview *ngFor="let post of posts; let index" [post]="post" [index]="index"></mb-post-preview>
 </div>
 
 
-<section class="section-white section--all-cat">
+<!--section class="section-white section--all-cat">
   <div class="container container-all-cat">
     <a title="Photography" href="#" class="category-link">Photography <sup class="category__total">350</sup></a>
     <a title="Architecture" href="#" class="category-link">Architecture <sup class="category__total">120</sup></a>
     <a title="Design" href="#" class="category-link">Design <sup class="category__total">84</sup></a>
     <a title="Biographies" href="#" class="category-link">Photography <sup class="category__total">37</sup></a>
   </div>
-</section>
+</section>-->

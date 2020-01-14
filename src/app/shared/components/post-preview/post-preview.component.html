@@ -1,8 +1,8 @@
-<div  class="post-small__content">
-  <div class="post-small__info">
-    <h2 class="post-small_title"><a [routerLink]="['/posts', post._id]">{{post.title | trim:80}}</a></h2>
-    <span class="post-small__cat"> {{post.createdAt | date:'mediumDate'}} | Category</span>
-    <p class="post-small__excerpt">{{post.content | trim:80}}</p>
-    <mb-post-preview-meta [post]="post"></mb-post-preview-meta>
-  </div>
+<div class="post-small__content">
+    <div class="post-small__info">
+        <h2 class="post-small_title"><a [routerLink]="['/posts', post._id]">{{post.title | trim:80}}</a></h2>
+        <span class="post-small__cat"> {{post.createdAt | date:'mediumDate'}} | Category</span>
+        <p class="post-small__excerpt">{{post.content | trim:80}}</p>
+        <mb-post-preview-meta [post]="post"></mb-post-preview-meta>
+    </div>
 </div>

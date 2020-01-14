@@ -1,6 +1,4 @@
-<nb-layout>
-
-  <!--nb-layout-header-- fixed>
+<!--nb-layout-header-- fixed>
     <div class="container container__header">
       <div class="header__logo">MINIMUM</div>
       <div class="header__btn">
@@ -10,24 +8,15 @@
     </div>
   </!--nb-layout-header-->
 
-  <nb-layout-column>
 
-    <router-outlet></router-outlet>
-
-  </nb-layout-column>
-
-  <nb-layout-footer fixed>
-    <!-- Insert footer here -->
-  </nb-layout-footer>
-
-</nb-layout>
+<router-outlet></router-outlet>
 
 <ng-template #errorDialog let-data let-ref="dialogRef">
-  <nb-card accent="danger">
-    <nb-card-header>{{data.status}} {{data.statusText}}</nb-card-header>
-    <nb-card-body>{{ data.content }}</nb-card-body>
-    <nb-card-footer>
-      <button nbButton status="danger" (click)="ref.close()">Close</button>
-    </nb-card-footer>
-  </nb-card>
+    <nb-card accent="danger">
+        <nb-card-header>{{data.status}} {{data.statusText}}</nb-card-header>
+        <nb-card-body>{{ data.content }}</nb-card-body>
+        <nb-card-footer>
+            <button nbButton status="danger" (click)="ref.close()">Close</button>
+        </nb-card-footer>
+    </nb-card>
 </ng-template>

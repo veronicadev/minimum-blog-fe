@@ -1,7 +1,17 @@
+<div class="blog-post-header">
+    <div class="w-container">
+        <div class="post-info-wrapper">
+            <a class="post-info when-link" [routerLink]="['/posts']">←&nbsp;view all posts</a>
+        </div>
+        <h1 class="blog-page-title">{{post.title}}</h1>
+        <div class="post-info-wrapper">
+            <div class="post-info">{{post.createdAt | date:'mediumDate'}} | Category</div>
+        </div>
+    </div>
+</div>
+
 <div class="post__content">
-  <div class="post__info">
-    <h2 class="post_title">{{post.title}}</h2>
-    <span class="post__cat">Category</span>
-    <p class="post__excerpt">{{post.content}}</p>
-  </div>
+    <div class="post__info">
+        <p class="post__excerpt">{{post.content}}</p>
+    </div>
 </div>
