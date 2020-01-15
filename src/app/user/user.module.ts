@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './user.component';
 import { UserRoutingModule } from './user-routing.module';
-import { NbSpinnerModule } from '@nebular/theme';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,7 @@ import { NbSpinnerModule } from '@nebular/theme';
   imports: [
     CommonModule,
     UserRoutingModule,
-    NbSpinnerModule
+    SharedModule
   ],
   exports:[
     UserComponent

@@ -1,3 +1,11 @@
-<header class="user-header" [nbSpinner]="userLoading" nbSpinnerStatus="primary">
-  <h1 class="user-header__name">{{user.name}}</h1>
-</header>
+<div class="blog-user-header">
+    <div class="w-container">
+        <div class="user-info-wrapper">
+            <a class="user-info when-link" [routerLink]="['/posts']">←&nbsp;view all posts</a>
+        </div>
+        <mb-spinner [showSpinner]="showUserSpinner">
+            <h1 class="user-page-title">{{user.name}}</h1>
+        </mb-spinner>
+
+    </div>
+</div>

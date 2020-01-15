@@ -10,7 +10,7 @@ import { UserService } from '../services/user.service';
 export class UserComponent implements OnInit {
 
   user: any;
-  userLoading: boolean = true;
+  showUserSpinner: boolean = true;
   constructor(private route: ActivatedRoute, private userService: UserService) { }
 
 
@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
       this.userService.getUser(params.get('userId')).subscribe(user=>{
         this.user = user;
         console.log(this.user)
-        this.userLoading = false;
+        this.showUserSpinner = false;
       })
     });
   }
