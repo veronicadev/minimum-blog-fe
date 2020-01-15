@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 export class PostsComponent implements OnInit {
   posts: Array<Post>;
   socket;
+  showPostsSpinner: boolean = true;
   constructor(private postService: PostService) {
     this.socket = io.connect(environment.socketUrl);
   }
@@ -25,6 +26,7 @@ export class PostsComponent implements OnInit {
         }))
       .subscribe((result: Post[]) => {
         this.posts = result;
+        this.showPostsSpinner = false;
         console.log(result);
       });
     this.socket.on('posts', data => {

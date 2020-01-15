@@ -3,15 +3,20 @@
         <div class="post-info-wrapper">
             <a class="post-info when-link" [routerLink]="['/posts']">←&nbsp;view all posts</a>
         </div>
-        <h1 class="blog-page-title">{{post.title}}</h1>
-        <div class="post-info-wrapper">
-            <div class="post-info">{{post.createdAt | date:'mediumDate'}} | Category</div>
-        </div>
+        <mb-spinner [showSpinner]="showPostTitleSpinner">
+            <h1 class="blog-page-title">{{post.title}}</h1>
+            <div class="post-info-wrapper">
+                <div class="post-info">{{post.createdAt | date:'mediumDate'}} | Category</div>
+            </div>
+        </mb-spinner>
+
     </div>
 </div>
 
 <div class="post__content">
     <div class="post__info">
-        <p class="post__excerpt">{{post.content}}</p>
+        <mb-spinner [showSpinner]="showPostContentSpinner">
+            <p class="post__excerpt">{{post.content}}</p>
+        </mb-spinner>
     </div>
 </div>

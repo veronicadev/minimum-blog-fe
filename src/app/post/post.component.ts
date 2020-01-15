@@ -17,6 +17,8 @@ export class PostComponent implements OnInit {
     imageUrl:''
   };
   postId: string;
+  showPostContentSpinner:boolean = true;
+  showPostTitleSpinner:boolean = true;
   constructor(private route: ActivatedRoute, private router: Router, private postService: PostService) { }
 
   ngOnInit() {
@@ -31,6 +33,8 @@ export class PostComponent implements OnInit {
       .subscribe((post: Post) => {
         console.log(post);
         this.post = post;
+        this.showPostContentSpinner = false;
+        this.showPostTitleSpinner = false;
       });
   }
 
