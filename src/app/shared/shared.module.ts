@@ -6,6 +6,7 @@ import { PostPreviewMetaComponent } from './components/post-preview-meta/post-pr
 import { PostAuthorComponent } from './components/post-author/post-author.component';
 import { PostLikeComponent } from './components/post-like/post-like.component';
 import { RouterModule } from '@angular/router';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
     PostPreviewComponent,
     PostPreviewMetaComponent,
     PostAuthorComponent,
-    PostLikeComponent
+    PostLikeComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { RouterModule } from '@angular/router';
     PostPreviewComponent,
     PostPreviewMetaComponent,
     PostAuthorComponent,
-    PostLikeComponent
+    PostLikeComponent,
+    SpinnerComponent
   ]
 })
 export class SharedModule { }
