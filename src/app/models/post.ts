@@ -6,3 +6,9 @@ export interface Post{
   createdAt?: string;
   updatedAt?: string;
 }
+
+export interface PostsResponse{
+  totalItems: number;
+  totalPages: number;
+  posts: Post[];
+}

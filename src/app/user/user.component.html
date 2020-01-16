@@ -9,3 +9,8 @@
 
     </div>
 </div>
+<div class=" container-last-posts">
+  <mb-spinner [showSpinner]="showPostsSpinner">
+      <mb-post-preview *ngFor="let post of postsResult.posts; let index" [post]="post" [index]="index"></mb-post-preview>
+  </mb-spinner>
+</div>
