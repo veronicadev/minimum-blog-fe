@@ -8,10 +8,10 @@
     </div>
   </!--nb-layout-header-->
 
-
+<mb-header></mb-header>
 <router-outlet></router-outlet>
 
-<ng-template #errorDialog let-data let-ref="dialogRef">
+<!--ng-template-- #errorDialog let-data let-ref="dialogRef">
     <nb-card accent="danger">
         <nb-card-header>{{data.status}} {{data.statusText}}</nb-card-header>
         <nb-card-body>{{ data.content }}</nb-card-body>
@@ -19,4 +19,4 @@
             <button nbButton status="danger" (click)="ref.close()">Close</button>
         </nb-card-footer>
     </nb-card>
-</ng-template>
+</!--ng-template-->

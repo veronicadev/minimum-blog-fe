@@ -1,0 +1,28 @@
+<header>
+    <div class="header__btn" (click)="onHeaderMenuClick()">
+      <span class="header__btn-line"></span>
+      <span class="header__btn-line"></span>
+    </div>
+  <nav [ngClass]="{'hidden': !openMenu}">
+    <ul>
+      <li >
+        <a [routerLink]="['/posts']">Posts</a>
+      </li>
+      <li *ngIf="!loggedIn">
+        <a [routerLink]="['/login']">Login</a>
+      </li>
+      <li *ngIf="!loggedIn">
+        <a>Signup</a>
+      </li>
+      <li *ngIf="loggedIn">
+        <a>My feed</a>
+      </li>
+      <li *ngIf="loggedIn">
+        <a>User</a>
+      </li>
+      <li *ngIf="loggedIn">
+        <a>Logout</a>
+      </li>
+    </ul>
+  </nav>
+</header>

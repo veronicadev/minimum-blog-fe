@@ -14,11 +14,13 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './services/auth.guard';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -27,12 +29,7 @@ import { AuthGuard } from './services/auth.guard';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'default' }),
-    NbLayoutModule,
     SharedModule,
-    NbDialogModule.forRoot(),
-    NbButtonModule,
-    NbInputModule,
-    NbCardModule
   ],
   providers: [
     PostService,
