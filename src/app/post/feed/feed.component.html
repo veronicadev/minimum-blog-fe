@@ -1,3 +1,16 @@
-<p>
-  feed works!
-</p>
+<header class="header-section" id="header">
+  <div class="w-container">
+      <a class="main-title" href="/">
+      Minumum Blog
+    </a>
+      <p class="main-subheading">I'm a simple blog created using Angualar & Node.js.</p>
+      <div class="social-link-group">
+      </div>
+  </div>
+</header>
+<div class=" container-last-posts">
+  <mb-posts-nav></mb-posts-nav>
+  <mb-spinner [showSpinner]="showPostsSpinner">
+      <mb-post-preview *ngFor="let post of posts; let index" [post]="post" [index]="index"></mb-post-preview>
+  </mb-spinner>
+</div>

@@ -16,6 +16,11 @@ const routes: Routes = [
         component: PostsComponent,
       },
       {
+        path:'feed',
+        component: FeedComponent,
+        canActivate: [AuthGuard]
+      },
+      {
         path: ':id',
         component: PostComponent,
       }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
-import { Post } from '../../models/post';
+import { Post, PostsResponse } from '../../models/post';
 import { map } from 'rxjs/operators';
 import * as io from 'socket.io-client';
 import { environment } from 'src/environments/environment';
@@ -21,7 +21,7 @@ export class PostsComponent implements OnInit {
   ngOnInit() {
     this.postService.getPosts()
       .pipe(
-        map((result: any) => {
+        map((result: PostsResponse) => {
           return result.posts;
         }))
       .subscribe((result: Post[]) => {

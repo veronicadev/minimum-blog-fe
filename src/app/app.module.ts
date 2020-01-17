@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './services/auth.guard';
 import { HeaderComponent } from './header/header.component';
+import { JwtInterceptor } from './services/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HeaderComponent } from './header/header.component';
     ErrorDialogService,
     AuthService,
     AuthGuard,
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorResponseInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorResponseInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

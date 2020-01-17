@@ -5,7 +5,7 @@
     </div>
   <nav [ngClass]="{'hidden': !openMenu}">
     <ul>
-      <li >
+      <li>
         <a [routerLink]="['/posts']">Posts</a>
       </li>
       <li *ngIf="!loggedIn">
@@ -14,11 +14,11 @@
       <li *ngIf="!loggedIn">
         <a>Signup</a>
       </li>
-      <li *ngIf="loggedIn">
-        <a>My feed</a>
+      <li  *ngIf="loggedIn">
+        <a [routerLink]="['/posts/feed']">My feed</a>
       </li>
       <li *ngIf="loggedIn">
-        <a>User</a>
+        <a [routerLink]="['/user', user.id]" routerLinkActive="router-link-active" >User</a>
       </li>
       <li *ngIf="loggedIn">
         <a>Logout</a>

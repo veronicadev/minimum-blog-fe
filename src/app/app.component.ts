@@ -1,6 +1,7 @@
 import { Component, TemplateRef, AfterViewInit, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { NbDialogService, NbDialogRef } from '@nebular/theme';
 import { ErrorDialogService } from './services/error-dialog.service';
+import { PostService } from './services/post.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,10 @@ import { ErrorDialogService } from './services/error-dialog.service';
 })
 export class AppComponent implements AfterViewInit, OnInit {
 
-  @ViewChild('errorDialog') errorDialog: TemplateRef<any>;
-  dialogRef: NbDialogRef<any>;
+  //@ViewChild('errorDialog') errorDialog: TemplateRef<any>;
+  //dialogRef: NbDialogRef<any>;
 
-  constructor(private errorDialogService: ErrorDialogService) { }
+  constructor(private errorDialogService: ErrorDialogService, private postService: PostService) { }
 
   ngAfterViewInit() { }
   ngOnInit() {
