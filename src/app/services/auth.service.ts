@@ -12,4 +12,9 @@ export class AuthService {
   login(email: string, password: string): Observable<User> {
     return this.httpClient.post<User>(`${environment.apiUrl}/login`, { email, password });
   }
+
+  isAuth(){
+    const user = JSON.parse(localStorage.getItem('user'));
+    return (user) ? true : false;
+  }
 }
