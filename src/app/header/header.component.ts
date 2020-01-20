@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'mb-header',
@@ -12,16 +13,23 @@ export class HeaderComponent implements OnInit {
   openMenu: boolean = false;
   user: User;
   loggedIn: boolean = false;
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
-    if(this.authService.isAuth()){
-      this.loggedIn = true;
-    }
+    this.user = this.authService.getUser();
+    this.authService.userLoggedinEvent.subscribe(loggedIn =>{
+      this.loggedIn = loggedIn;
+    });
   }
 
   onHeaderMenuClick(){
     this.openMenu = !this.openMenu;
+  }
+
+  onLogout(){
+    this.authService.logout();
+    this.router.navigate(['/posts']);
   }
 
 }

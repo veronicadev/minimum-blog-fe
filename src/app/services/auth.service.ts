@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable()
 export class AuthService {
+
+  userLoggedinEvent: Subject<boolean> = new Subject<boolean>();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -14,14 +16,29 @@ export class AuthService {
   }
 
   isAuth(){
-    return (this.getUser()) ? true : false;
+    if(this.getUser()){
+      this.userLoggedinEvent.next(true);
+      return true;
+    }
+    this.userLoggedinEvent.next(false);
+    return false;
   }
 
   setUser(user: User){
     localStorage.setItem('user', JSON.stringify(user));
+    this.userLoggedinEvent.next(true);
   }
 
   getUser(){
     return JSON.parse(localStorage.getItem('user'));
+  }
+
+  removeUser(){
+    localStorage.removeItem('user');
+    this.userLoggedinEvent.next(false);
+  }
+
+  logout(){
+    this.removeUser();
   }
 }
