@@ -14,7 +14,14 @@ export class AuthService {
   }
 
   isAuth(){
-    const user = JSON.parse(localStorage.getItem('user'));
-    return (user) ? true : false;
+    return (this.getUser()) ? true : false;
+  }
+
+  setUser(user: User){
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  getUser(){
+    return JSON.parse(localStorage.getItem('user'));
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'mb-header',
@@ -11,11 +12,10 @@ export class HeaderComponent implements OnInit {
   openMenu: boolean = false;
   user: User;
   loggedIn: boolean = false;
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user'));
-    if(this.user){
+    if(this.authService.isAuth()){
       this.loggedIn = true;
     }
   }

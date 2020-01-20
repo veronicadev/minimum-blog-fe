@@ -14,9 +14,7 @@ export class JwtInterceptor implements HttpInterceptor {
   constructor(private authService:AuthService){}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    //console.log(new Date());
-    let currentUser = JSON.parse(localStorage.getItem('user'));
-    console.log(currentUser)
+    let currentUser = this.authService.getUser();
     let request: HttpRequest<any> = req.clone();
     if (currentUser && currentUser.token) {
         request = req.clone({
@@ -25,8 +23,6 @@ export class JwtInterceptor implements HttpInterceptor {
             }
         });
     }
-
-    console.log(request)
     return next.handle(request);
   }
 }
