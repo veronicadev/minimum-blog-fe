@@ -25,4 +25,12 @@ export class PostService {
     return this.httpClient.get<PostsResponse>(`${environment.apiUrl}/posts/feed`, {params});
   }
 
+  postPost(post: any):Observable<Post>{
+    return this.httpClient.post<Post>(`${environment.apiUrl}/posts`, post);
+  }
+
+  putPost(postId: string, post: Post):Observable<Post>{
+    return this.httpClient.post<Post>(`${environment.apiUrl}/posts/${postId}`, post);
+  }
+
 }

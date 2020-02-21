@@ -1,4 +1,5 @@
 <div class="post-preview-footer">
     <mb-post-author [author]="post.creator"></mb-post-author>
     <mb-post-like></mb-post-like>
+    <span *ngIf="editBtn" class="edit-label" [routerLink]="['/dashboard/edit-post', post._id]" >Edit</span>
 </div>

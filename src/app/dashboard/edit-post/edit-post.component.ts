@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../../../../src/app/services/user.service';
-import { Post } from 'src/app/models/post';
-import { AuthService } from 'src/app/services/auth.service';
-import { User } from 'src/app/models/user';
-import { Router } from '@angular/router';
+import { Post } from '../../../../src/app/models/post';
+import { AuthService } from '../../../../src/app/services/auth.service';
+import { User } from '../../../../src/app/models/user';
+import { Router, ActivatedRoute } from '@angular/router';
+import { PostService } from '../../../../src/app/services/post.service';
 
 @Component({
   selector: 'mb-edit-post',
@@ -16,15 +16,42 @@ export class EditPostComponent implements OnInit {
   submitted: boolean = false;
   loading: boolean = false;
   user: User;
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private authService: AuthService, private router: Router) { }
+  editMode: boolean = false;
+  pageTitle: string = "Add post";
+  postId: string = '';
+  post: Post = {
+    title: '',
+    content: '',
+    category: ''
+  };
+
+  constructor(private formBuilder: FormBuilder,
+    private postService: PostService,
+    private authService: AuthService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
+    this.editPostForm = this.formBuilder.group({
+      title: ['', [Validators.required, Validators.minLength(5)]],
+      content: ['', [Validators.required, Validators.minLength(5)]],
+      category: ['', [Validators.required, Validators.minLength(2)]]
+    });
+  }
 
   ngOnInit() {
     this.user = this.authService.getUser();
-    this.editPostForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      content: ['', Validators.required],
-      category: ['', Validators.required]
-    });
+    this.postId = this.activatedRoute.snapshot.paramMap.get("postId");
+    console.log(this.postId)
+    if (this.postId) {
+      this.editMode = true;
+      this.pageTitle = "Edit post";
+      this.postService.getPost(this.postId)
+        .subscribe((post: Post) => {
+          this.editPostForm.controls["title"].patchValue(post.title);
+          this.editPostForm.controls["content"].patchValue(post.content);
+          this.editPostForm.controls["category"].patchValue(post.category);
+          console.log(this.editPostForm)
+        });
+    }
   }
 
   get f() { return this.editPostForm.controls; }
@@ -36,19 +63,29 @@ export class EditPostComponent implements OnInit {
     if (this.editPostForm.invalid) {
       return;
     }
-        console.log({
-          title: this.f.title.value,
-          content: this.f.content.value,
-          category: this.f.category.value
-        })
-    this.userService.postPost({
-      title: this.f.title.value,
-      content: this.f.content.value,
-      category: this.f.category.value
-    })
-    .subscribe((post: Post) => {
-      this.router.navigate(['/users', this.user.id]);
-    });
+
+    if (!this.editMode) {
+      this.loading = true;
+      this.postService.postPost({
+        title: this.f.title.value,
+        content: this.f.content.value,
+        category: this.f.category.value
+      })
+        .subscribe((post: Post) => {
+          this.loading = true;
+          this.router.navigate(['/users', this.user.id]);
+        });
+    } else {
+      this.postService.putPost(this.postId, {
+        title: this.f.title.value,
+        content: this.f.content.value,
+        category: this.f.category.value
+      })
+        .subscribe((post: Post) => {
+          this.loading = true;
+          this.router.navigate(['/users', this.user.id]);
+        });
+    }
 
   }
 

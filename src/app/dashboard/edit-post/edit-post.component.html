@@ -1,7 +1,7 @@
 <div class="blog-user-header">
   <div class="w-container">
     <div>
-      <h1 class="user-page-title">Edit post</h1>
+      <h1 class="user-page-title">{{pageTitle}}</h1>
     </div>
   </div>
 </div>
@@ -12,6 +12,6 @@
     <textarea  formControlName="content" placeholder="Content"></textarea>
     <button type="submit" [disabled]="!editPostForm.valid">
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-      Post</button>
+      {{pageTitle}}</button>
   </form>
 </div>

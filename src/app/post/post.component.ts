@@ -14,7 +14,7 @@ export class PostComponent implements OnInit {
   post: Post = {
     title: '',
     content:'',
-    imageUrl:''
+    category:''
   };
   postId: string;
   showPostContentSpinner:boolean = true;

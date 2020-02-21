@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AuthService } from '../../../../../src/app/services/auth.service';
 
 @Component({
   selector: 'mb-post-preview-meta',
@@ -6,11 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./post-preview-meta.component.less']
 })
 export class PostPreviewMetaComponent implements OnInit {
-
+  editBtn: boolean = false;
   @Input() post;
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    if(this.post.creator._id === this.authService.getUser().id){
+      this.editBtn = true;
+    }
   }
 
 }

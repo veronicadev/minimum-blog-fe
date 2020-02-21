@@ -19,8 +19,4 @@ export class UserService {
   getPosts(id?: string):Observable<PostsResponse>{
     return this.httpClient.get<PostsResponse>(`${environment.apiUrl}/user/${id}/posts`);
   }
-
-  postPost(post: any):Observable<Post>{
-    return this.httpClient.post<Post>(`${environment.apiUrl}/posts`, post);
-  }
 }

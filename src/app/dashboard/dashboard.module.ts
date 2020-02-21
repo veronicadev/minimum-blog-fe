@@ -12,6 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     DashboardRoutingModule,
     ReactiveFormsModule
+  ],
+  exports:[
+    EditPostComponent
   ]
 })
 export class DashboardModule { }

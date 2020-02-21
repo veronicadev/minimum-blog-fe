@@ -8,6 +8,11 @@ const routes: Routes = [
     path: 'edit-post',
     component: EditPostComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'edit-post/:postId',
+    component: EditPostComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
