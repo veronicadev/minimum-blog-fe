@@ -1,9 +1,17 @@
-<nb-card>
-  <nb-card-body class="example-items-rows">
-
-      <input type="text" fullWidth formControlName="title" nbInput placeholder="Title">
-      <input type="file"  fullWidth nbInput>
-      <textarea fullWidth  nbInput placeholder="Content"></textarea>
-
-  </nb-card-body>
-</nb-card>
+<div class="blog-user-header">
+  <div class="w-container">
+    <div>
+      <h1 class="user-page-title">Edit post</h1>
+    </div>
+  </div>
+</div>
+<div class=" container-last-posts">
+  <form [formGroup]="editPostForm" (ngSubmit)="onSubmit(editPostForm)">
+    <input type="text" formControlName="title" placeholder="Title">
+    <input type="text" formControlName="category" placeholder="Category">
+    <textarea  formControlName="content" placeholder="Content"></textarea>
+    <button type="submit" [disabled]="!editPostForm.valid">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      Post</button>
+  </form>
+</div>
