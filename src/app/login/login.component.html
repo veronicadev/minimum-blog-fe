@@ -1,23 +1,26 @@
 <div class="container-last-posts">
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label class="label" for="username">Email address:</label>
-    <input type="text" formControlName="username" />
-    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-      <div *ngIf="f.username.errors.required">Username is required</div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="alert alert-red" *ngIf="showErrorLogin">
+      {{error}}
     </div>
-  </div>
-  <div class="form-group">
-    <label class="label" for="password">Password:</label>
-    <input type="password" formControlName="password"  />
-    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-      <div *ngIf="f.password.errors.required">Password is required</div>
+    <div class="form-group">
+      <label class="label" for="username">Email address:</label>
+      <input type="text" formControlName="username" />
+      <div *ngIf="f.username.touched && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">Email is required</div>
+        <div *ngIf="f.username.errors.email">Email is not in the right format</div>
+      </div>
     </div>
-  </div>
-  <button [disabled]="!loginForm.valid">
-    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-    Login
-  </button>
-  <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
-</form>
+    <div class="form-group">
+      <label class="label" for="password">Password:</label>
+      <input type="password" formControlName="password" />
+      <div *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+    </div>
+    <button [disabled]="!loginForm.valid">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      Login
+    </button>
+  </form>
 </div>
