@@ -18,7 +18,7 @@
         <div *ngIf="f.password.errors.required">Password is required</div>
       </div>
     </div>
-    <button [disabled]="!loginForm.valid">
+    <button class="submit" [disabled]="!loginForm.valid">
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
       Login
     </button>

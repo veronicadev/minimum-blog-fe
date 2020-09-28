@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularEditorModule
   ],
   exports:[
     EditPostComponent

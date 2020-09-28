@@ -9,8 +9,8 @@
   <form [formGroup]="editPostForm" (ngSubmit)="onSubmit(editPostForm)">
     <input type="text" formControlName="title" placeholder="Title">
     <input type="text" formControlName="category" placeholder="Category">
-    <textarea  formControlName="content" placeholder="Content"></textarea>
-    <button type="submit" [disabled]="!editPostForm.valid">
+    <angular-editor formControlName="content" [config]="config"></angular-editor>
+    <button class="submit" type="submit" [disabled]="!editPostForm.valid">
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
       {{pageTitle}}</button>
   </form>

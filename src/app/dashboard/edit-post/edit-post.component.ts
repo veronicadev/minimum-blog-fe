@@ -5,6 +5,7 @@ import { AuthService } from '../../../../src/app/services/auth.service';
 import { User } from '../../../../src/app/models/user';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PostService } from '../../../../src/app/services/post.service';
+import { EDITOR_CONFIG } from 'src/app/shared/editor-config';
 
 @Component({
   selector: 'mb-edit-post',
@@ -24,6 +25,8 @@ export class EditPostComponent implements OnInit {
     content: '',
     category: ''
   };
+
+  config = EDITOR_CONFIG;
 
   constructor(private formBuilder: FormBuilder,
     private postService: PostService,

@@ -35,7 +35,7 @@
         <div *ngIf="f.passwordRepeat.errors.noMatching">Password repeated does not match the password</div>
       </div>
     </div>
-    <button [disabled]="!signupForm.valid">
+    <button class="submit" [disabled]="!signupForm.valid">
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
       Login
     </button>

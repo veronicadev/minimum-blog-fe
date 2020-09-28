@@ -1,3 +1,4 @@
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 
@@ -31,6 +32,7 @@ import { SignupComponent } from './signup/signup.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     SharedModule,
+    AngularEditorModule
   ],
   providers: [
     PostService,
