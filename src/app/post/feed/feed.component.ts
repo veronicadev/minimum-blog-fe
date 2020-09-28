@@ -10,7 +10,7 @@ import { Post, PostsResponse } from 'src/app/models/post';
 })
 export class FeedComponent implements OnInit {
 
-  posts: Post[];
+  posts: Post[] = [];
   showPostsSpinner: boolean = true;
   paginationSettings:IPaginationSettings = new PaginationSettings();
 

@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./posts.component.less']
 })
 export class PostsComponent implements OnInit {
-  posts: Array<Post>;
+  posts: Array<Post> = [];
   socket;
   showPostsSpinner: boolean = true;
 

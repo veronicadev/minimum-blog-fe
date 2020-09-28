@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { PostService } from './services/post.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbCardModule, NbDialogModule, NbButtonModule, NbInputModule } from '@nebular/theme';
 import { SharedModule } from './shared/shared.module';
 import { ErrorDialogService } from './services/error-dialog.service';
 import { ErrorResponseInterceptor } from './services/error-response.interceptor';
@@ -16,12 +15,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './services/auth.guard';
 import { HeaderComponent } from './header/header.component';
 import { JwtInterceptor } from './services/jwt.interceptor';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,6 @@ import { JwtInterceptor } from './services/jwt.interceptor';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'default' }),
     SharedModule,
   ],
   providers: [

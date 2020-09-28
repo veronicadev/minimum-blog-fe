@@ -16,7 +16,11 @@ export class UserService {
     return this.httpClient.get<User>(`${environment.apiUrl}/user/${id}`);
   }
 
-  getPosts(id?: string):Observable<PostsResponse>{
-    return this.httpClient.get<PostsResponse>(`${environment.apiUrl}/user/${id}/posts`);
+  getPosts(page:number, id?: string):Observable<PostsResponse>{
+    return this.httpClient.get<PostsResponse>(`${environment.apiUrl}/user/${id}/posts`, {
+      params:{
+        page: page.toString()
+      }
+    });
   }
 }

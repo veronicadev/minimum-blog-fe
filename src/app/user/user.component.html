@@ -11,6 +11,8 @@
 </div>
 <div class=" container-last-posts">
   <mb-spinner [showSpinner]="showPostsSpinner">
-      <mb-post-preview *ngFor="let post of postsResult.posts; let index" [post]="post" [index]="index"></mb-post-preview>
+    <p *ngIf="posts.length==0">No post for the user {{user.name}}</p>
+      <mb-post-preview *ngFor="let post of posts; let index" [post]="post" [index]="index"></mb-post-preview>
+      <mb-pagination  *ngIf="paginationSettings.totalPages>0" [paginationSettings]="paginationSettings" (changePage)="onChangePage($event)"></mb-pagination>
   </mb-spinner>
 </div>

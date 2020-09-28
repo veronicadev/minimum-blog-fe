@@ -18,8 +18,6 @@ export class LoginComponent implements OnInit {
   showErrorLogin:boolean = false;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService
   ) {

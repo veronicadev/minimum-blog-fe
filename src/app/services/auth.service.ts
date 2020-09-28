@@ -15,6 +15,14 @@ export class AuthService {
     return this.httpClient.post<User>(`${environment.apiUrl}/login`, { email, password });
   }
 
+  signup(email: string, username: string, password: string){
+    return this.httpClient.post<User>(`${environment.apiUrl}/signup`, {
+      email:email,
+      password:password,
+      name:username
+     });
+  }
+
   isAuth(){
     if(this.getUser()){
       this.userLoggedinEvent.next(true);
