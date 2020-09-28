@@ -12,6 +12,7 @@
     <mb-posts-nav></mb-posts-nav>
     <mb-spinner [showSpinner]="showPostsSpinner">
         <mb-post-preview *ngFor="let post of posts; let index" [post]="post" [index]="index"></mb-post-preview>
+        <mb-pagination [paginationSettings]="paginationSettings" (changePage)="onChangePage($event)"></mb-pagination>
     </mb-spinner>
 </div>
 

@@ -12,3 +12,15 @@ export interface PostsResponse{
   totalPages: number;
   posts: Post[];
 }
+
+export interface IPaginationSettings{
+  totalPages: number;
+  currentPage: number;
+  maxPaginationSize: number;
+}
+
+export class PaginationSettings implements IPaginationSettings{
+  totalPages = 0;
+  currentPage= 1;
+  maxPaginationSize= 0;
+}

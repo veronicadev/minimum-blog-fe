@@ -8,6 +8,7 @@ import { PostLikeComponent } from './components/post-like/post-like.component';
 import { RouterModule } from '@angular/router';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { PostsNavComponent } from './components/posts-nav/posts-nav.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PostsNavComponent } from './components/posts-nav/posts-nav.component';
     PostAuthorComponent,
     PostLikeComponent,
     SpinnerComponent,
-    PostsNavComponent
+    PostsNavComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { PostsNavComponent } from './components/posts-nav/posts-nav.component';
     PostAuthorComponent,
     PostLikeComponent,
     SpinnerComponent,
-    PostsNavComponent
+    PostsNavComponent,
+    PaginationComponent
   ]
 })
 export class SharedModule { }

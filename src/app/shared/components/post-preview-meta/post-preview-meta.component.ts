@@ -12,8 +12,10 @@ export class PostPreviewMetaComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    if(this.post.creator._id === this.authService.getUser().id){
-      this.editBtn = true;
+    if(this.authService.getUser()){
+      if(this.post.creator._id === this.authService.getUser().id){
+        this.editBtn = true;
+      }
     }
   }
 

@@ -9,20 +9,29 @@ export class PostService {
 
   constructor(public httpClient: HttpClient) { }
 
-  getPosts(page?: string):Observable<PostsResponse>{
+  getPosts(page: number):Observable<PostsResponse>{
     let params = new HttpParams();
-    params.set('page', page);
-    return this.httpClient.get<PostsResponse>(`${environment.apiUrl}/posts`, {params});
+    params.set('page', page.toString());
+    return this.httpClient.get<PostsResponse>(`${environment.apiUrl}/posts`, {
+      params:{
+        page: page.toString()
+      }
+    });
   }
 
   getPost(id:string):Observable<Post>{
     return this.httpClient.get<Post>(`${environment.apiUrl}/posts/${id}`);
   }
 
-  getFeed(page?: string):Observable<PostsResponse>{
+  getFeed(page: number):Observable<PostsResponse>{
     let params = new HttpParams();
-    params.set('page', page);
-    return this.httpClient.get<PostsResponse>(`${environment.apiUrl}/posts/feed`, {params});
+    params.set('page', page.toString());
+    return this.httpClient.get<PostsResponse>(`${environment.apiUrl}/posts/feed`,
+    {
+      params:{
+        page: page.toString()
+      }
+    });
   }
 
   postPost(post: any):Observable<Post>{
