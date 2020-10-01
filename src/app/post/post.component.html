@@ -16,7 +16,7 @@
 <div class="post__content">
     <div class="post__info">
         <mb-spinner [showSpinner]="showPostContentSpinner">
-            <p class="post__excerpt">{{post.content}}</p>
+          <div  class="post__excerpt" [innerHTML]="post.content" ></div>
         </mb-spinner>
     </div>
 </div>

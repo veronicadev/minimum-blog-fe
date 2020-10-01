@@ -10,9 +10,13 @@ export class PostPreviewComponent implements OnInit {
 
   @Input('index') index: number;
   @Input('post') post: Post;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    if(this.post && this.post.excerpt){
+      this.post.excerpt = decodeURI(this.post.excerpt);
+    }
   }
 
 }

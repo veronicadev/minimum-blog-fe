@@ -36,7 +36,8 @@ export class EditPostComponent implements OnInit {
     this.editPostForm = this.formBuilder.group({
       title: ['', [Validators.required, Validators.minLength(5)]],
       content: ['', [Validators.required, Validators.minLength(5)]],
-      category: ['', [Validators.required, Validators.minLength(2)]]
+      category: ['', [Validators.required, Validators.minLength(2)]],
+      excerpt: ['', [Validators.required, Validators.minLength(2)]]
     });
   }
 
@@ -72,7 +73,8 @@ export class EditPostComponent implements OnInit {
       this.postService.postPost({
         title: this.f.title.value,
         content: this.f.content.value,
-        category: this.f.category.value
+        category: this.f.category.value,
+        excerpt: this.f.excerpt.value
       })
         .subscribe((post: Post) => {
           this.loading = true;
@@ -82,7 +84,8 @@ export class EditPostComponent implements OnInit {
       this.postService.putPost(this.postId, {
         title: this.f.title.value,
         content: this.f.content.value,
-        category: this.f.category.value
+        category: this.f.category.value,
+        excerpt: this.f.excerpt.value
       })
         .subscribe((post: Post) => {
           this.loading = true;

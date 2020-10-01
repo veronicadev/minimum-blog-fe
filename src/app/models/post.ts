@@ -1,3 +1,5 @@
+import { SafeHtml } from '@angular/platform-browser';
+
 export interface Post{
   _id?: Object;
   title: string;
@@ -5,6 +7,7 @@ export interface Post{
   content: string;
   createdAt?: string;
   updatedAt?: string;
+  excerpt?: string;
 }
 
 export interface PostsResponse{
